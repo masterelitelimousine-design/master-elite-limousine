@@ -237,6 +237,112 @@ a {
   animation: heroMove 14s ease-in-out infinite alternate;
 }
 
+/* Page-specific hero images */
+.home-page .hero-bg {
+  background-image: url("assets/images/hero1.webp");
+}
+
+.services-page .hero-bg {
+  background-image: url("assets/images/hero2.webp");
+}
+
+.airport-page .hero-bg {
+  background-image: url("assets/images/hero3.webp");
+}
+
+.corporate-page .hero-bg {
+  background-image: url("assets/images/hero4.webp");
+}
+
+.concierge-page .hero-bg {
+  background-image: url("assets/images/hero5.webp");
+}
+
+.private-chauffeur-page .hero-bg {
+  background-image: url("assets/images/hero6.webp");
+}
+
+.road-shows-page .hero-bg {
+  background-image: url("assets/images/hero7.webp");
+}
+
+.special-events-page .hero-bg {
+  background-image: url("assets/images/hero1.webp");
+}
+
+.transfers-page .hero-bg {
+  background-image: url("assets/images/hero2.webp");
+}
+
+.weddings-page .hero-bg {
+  background-image: url("assets/images/wedding-hero.webp");
+}
+
+.fleet-page .hero-bg {
+  background-image: url("assets/images/hero4.webp");
+}
+
+.service-area-page .hero-bg {
+  background-image: url("assets/images/hero5.webp");
+}
+
+.about-page .hero-bg {
+  background-image: url("assets/images/hero6.webp");
+}
+
+.faq-booking-page .hero-bg {
+  background-image: url("assets/images/hero7.webp");
+}
+
+/* City page hero images */
+.milton-page .hero-bg {
+  background-image: url("assets/images/hero1.webp");
+}
+
+.guelph-page .hero-bg {
+  background-image: url("assets/images/hero2.webp");
+}
+
+.kitchener-page .hero-bg {
+  background-image: url("assets/images/hero3.webp");
+}
+
+.waterloo-page .hero-bg {
+  background-image: url("assets/images/hero4.webp");
+}
+
+.cambridge-page .hero-bg {
+  background-image: url("assets/images/hero5.webp");
+}
+
+.woodstock-page .hero-bg {
+  background-image: url("assets/images/hero6.webp");
+}
+
+.london-page .hero-bg {
+  background-image: url("assets/images/hero7.webp");
+}
+
+.windsor-page .hero-bg {
+  background-image: url("assets/images/hero1.webp");
+}
+
+.mississauga-page .hero-bg {
+  background-image: url("assets/images/hero2.webp");
+}
+
+.fergus-page .hero-bg {
+  background-image: url("assets/images/hero3.webp");
+}
+
+.rockwood-page .hero-bg {
+  background-image: url("assets/images/hero4.webp");
+}
+
+.acton-page .hero-bg {
+  background-image: url("assets/images/hero5.webp");
+}
+
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -501,6 +607,14 @@ h1 span {
   font-weight: 900;
 }
 
+.second-grid {
+  margin-top: 18px;
+}
+
+.service-page-grid .fleet-card h3 {
+  min-height: 38px;
+}
+
 .center {
   text-align: center;
   margin-top: 26px;
@@ -754,41 +868,52 @@ h1 span {
   top: 86px;
   left: 14px;
   right: 14px;
-  display: grid;
-  gap: 0;
-  padding: 12px;
-  background: rgba(7,7,7,.98);
+  display: none;
+  padding: 14px 18px 90px;
+  background: rgba(7, 7, 7, 0.97);
   border: 1px solid var(--line);
-  transform: translateY(-15px);
-  opacity: 0;
-  pointer-events: none;
-  transition: .25s ease;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  z-index: 100;
 }
 
 .main-nav.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
+  display: block;
 }
 
 .main-nav > a,
-.dropdown-toggle {
+.main-nav .dropdown-toggle {
   display: block;
-  padding: 14px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  width: 100%;
+  padding: 15px 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .nav-dropdown {
   display: block;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  position: static;
 }
 
-.dropdown-menu {
+.dropdown-toggle::after {
+  margin-left: 7px;
+}
+
+.main-nav .dropdown-menu,
+.main-nav .nav-dropdown:hover .dropdown-menu,
+.main-nav .nav-dropdown:focus-within .dropdown-menu {
   position: static;
+  top: auto;
+  left: auto;
   transform: none;
-  min-width: 100%;
-  padding: 0 0 0 14px;
-  background: rgba(255,255,255,.03);
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgba(255,255,255,.035);
   border: 0;
   box-shadow: none;
   opacity: 1;
@@ -797,22 +922,28 @@ h1 span {
   display: none;
 }
 
-.dropdown-menu::before {
+.main-nav .dropdown-menu::before {
   display: none;
 }
 
-.nav-dropdown.open .dropdown-menu {
+.main-nav .nav-dropdown.open .dropdown-menu {
   display: block;
 }
 
-.dropdown-menu a {
-  padding: 12px 14px;
-  font-size: 13px;
+.main-nav .dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 12px 10px;
   color: var(--muted);
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
   border-bottom: 1px solid rgba(255,255,255,.05);
+  border-radius: 0;
+  white-space: normal;
 }
 
-.dropdown-menu a:hover {
+.main-nav .dropdown-menu a:hover {
   color: var(--gold-light);
   background: rgba(214,167,56,.08);
 }
@@ -975,7 +1106,7 @@ h1 span {
     left: 10px;
     right: 10px;
     bottom: 10px;
-    z-index: 80;
+    z-index: 120;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
