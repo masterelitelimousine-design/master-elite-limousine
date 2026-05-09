@@ -296,52 +296,60 @@ a {
 
 /* City page hero images */
 .milton-page .hero-bg {
-  background-image: url("assets/images/hero1.webp");
+  background-image: url("assets/images/city-milton.webp");
 }
 
 .guelph-page .hero-bg {
-  background-image: url("assets/images/hero2.webp");
+  background-image: url("assets/images/city-guelph.webp");
 }
 
 .kitchener-page .hero-bg {
-  background-image: url("assets/images/hero3.webp");
+  background-image: url("assets/images/city-kitchener.webp");
 }
 
 .waterloo-page .hero-bg {
-  background-image: url("assets/images/hero4.webp");
+  background-image: url("assets/images/city-waterloo.webp");
 }
 
 .cambridge-page .hero-bg {
-  background-image: url("assets/images/hero5.webp");
+  background-image: url("assets/images/city-cambridge.webp");
 }
 
 .woodstock-page .hero-bg {
-  background-image: url("assets/images/hero6.webp");
+  background-image: url("assets/images/city-woodstock.webp");
 }
 
 .london-page .hero-bg {
-  background-image: url("assets/images/hero7.webp");
+  background-image: url("assets/images/city-london.webp");
 }
 
 .windsor-page .hero-bg {
-  background-image: url("assets/images/hero1.webp");
+  background-image: url("assets/images/city-windsor.webp");
 }
 
 .mississauga-page .hero-bg {
-  background-image: url("assets/images/hero2.webp");
+  background-image: url("assets/images/city-mississauga.webp");
 }
 
 .fergus-page .hero-bg {
-  background-image: url("assets/images/hero3.webp");
+  background-image: url("assets/images/city-fergus.webp");
 }
 
 .rockwood-page .hero-bg {
-  background-image: url("assets/images/hero4.webp");
+  background-image: url("assets/images/city-rockwood.webp");
 }
 
 .acton-page .hero-bg {
-  background-image: url("assets/images/hero5.webp");
+  background-image: url("assets/images/city-acton.webp");
 }
+
+/* City hero framing - more zoomed out for landmark images */
+.city-page .hero-bg {
+  background-size: 58% auto;
+  background-position: 90% center;
+  background-repeat: no-repeat;
+}
+
 
 .hero-shade {
   position: absolute;
@@ -715,6 +723,164 @@ h1 span {
 
 .service-page-grid .fleet-card h3 {
   min-height: 38px;
+}
+
+/* Fleet page enhanced layout */
+.fleet-showcase-section {
+  background:
+    radial-gradient(circle at 80% 10%, rgba(214, 167, 56, 0.08), transparent 32%),
+    #050505;
+}
+
+.fleet-showcase {
+  display: grid;
+  gap: 26px;
+}
+
+.fleet-feature-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  background: rgba(10, 10, 10, 0.86);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.fleet-feature-card.reverse .fleet-feature-image {
+  order: 2;
+}
+
+.fleet-feature-card.reverse .fleet-feature-content {
+  order: 1;
+}
+
+.fleet-feature-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+}
+
+.fleet-feature-content {
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fleet-label {
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.fleet-feature-content h2 {
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1;
+}
+
+.fleet-capacity {
+  color: var(--gold-light);
+  font-weight: 900;
+  margin: 12px 0 18px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.fleet-feature-content p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.fleet-feature-content ul {
+  margin: 0 0 24px;
+  padding-left: 20px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.fleet-feature-content li::marker {
+  color: var(--gold-light);
+}
+
+.fleet-compare-table {
+  border: 1px solid var(--line);
+  background: rgba(10,10,10,.86);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.fleet-compare-row {
+  display: grid;
+  grid-template-columns: .8fr .7fr 1.4fr 1.4fr;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.fleet-compare-row:last-child {
+  border-bottom: 0;
+}
+
+.fleet-compare-row span {
+  padding: 18px;
+  color: var(--muted);
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.fleet-compare-row span:last-child {
+  border-right: 0;
+}
+
+.fleet-compare-head {
+  background: rgba(214, 167, 56, 0.12);
+}
+
+.fleet-compare-head span {
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 980px) {
+  .fleet-feature-card,
+  .fleet-feature-card.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-feature-card.reverse .fleet-feature-image,
+  .fleet-feature-card.reverse .fleet-feature-content {
+    order: initial;
+  }
+
+  .fleet-feature-image img {
+    min-height: 280px;
+  }
+
+  .fleet-compare-row {
+    grid-template-columns: 1fr;
+  }
+
+  .fleet-compare-row span {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .fleet-feature-content {
+    padding: 28px 22px;
+  }
+
+  .fleet-feature-image img {
+    min-height: 220px;
+  }
 }
 
 .center {
@@ -1105,6 +1271,18 @@ h1 span {
 
   .hero-bg {
     background-position: 64% center;
+  }
+
+  .city-page .hero-bg {
+    background-size: auto 100%;
+    background-position: 68% center;
+  }
+
+  .mississauga-page .hero-bg,
+  .guelph-page .hero-bg,
+  .woodstock-page .hero-bg,
+  .acton-page .hero-bg {
+    background-position: 74% center;
   }
 
   .hero-shade {
