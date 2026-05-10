@@ -105,10 +105,14 @@ a {
 }
 
 .dropdown-toggle::after {
-  content: "▾";
-  margin-left: 7px;
-  color: var(--gold-light);
-  font-size: 11px;
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 9px;
+  border-right: 2px solid var(--gold-light);
+  border-bottom: 2px solid var(--gold-light);
+  transform: rotate(45deg) translateY(-2px);
 }
 
 .dropdown-menu {
@@ -199,8 +203,8 @@ a {
 }
 
 .header-phone::before {
-  content: "☎";
-  margin-right: 8px;
+  content: "";
+  display: none;
 }
 
 .menu-toggle {
@@ -453,9 +457,8 @@ h1 span {
 }
 
 .phone-inline::before {
-  content: "☎";
-  margin-right: 9px;
-  color: var(--gold-light);
+  content: "";
+  display: none;
 }
 
 .quick-services {
@@ -944,13 +947,7 @@ h1 span {
   min-height: 190px;
 }
 
-.quote-mark {
-  display: block;
-  color: var(--gold-light);
-  font-size: 60px;
-  line-height: .7;
-  font-family: Georgia, serif;
-}
+.quote-mark { display: none; }
 
 .story-quote h2 {
   margin: 0 0 18px;
@@ -1030,8 +1027,8 @@ h1 span {
 }
 
 .cta-phone::before {
-  content: "☎";
-  margin-right: 8px;
+  content: "";
+  display: none;
 }
 
 .site-footer {
@@ -1705,4 +1702,58 @@ h1 span {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+.icon svg, .why-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.why-icon svg {
+  width: 28px;
+  height: 28px;
+}
+.airport-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 26px;
+}
+.airport-grid article {
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(214,167,56,.08), rgba(255,255,255,.025));
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.airport-grid h3 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.airport-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+@media (max-width: 980px) {
+  .airport-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .airport-grid { grid-template-columns: 1fr; }
+}
+
+.link-arrow-icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
