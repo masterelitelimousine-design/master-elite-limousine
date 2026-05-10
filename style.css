@@ -1830,3 +1830,71 @@ h1 span {
   stroke-linejoin: round;
 }
 
+/* Mobile booking page fix: prevent form overflow and keep fields clear of bottom CTA */
+@media (max-width: 640px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .faq-booking-page .fleet-section {
+    overflow-x: hidden;
+  }
+
+  .faq-booking-page .booking-form,
+  .faq-booking-page .form-section,
+  .faq-booking-page .form-grid,
+  .faq-booking-page .booking-form label,
+  .faq-booking-page .booking-form input,
+  .faq-booking-page .booking-form select,
+  .faq-booking-page .booking-form textarea {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .faq-booking-page .booking-form {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 34px;
+  }
+
+  .faq-booking-page .form-section {
+    padding: 24px 18px;
+  }
+
+  .faq-booking-page .form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .faq-booking-page .booking-form label {
+    display: block;
+    width: 100%;
+  }
+
+  .faq-booking-page .booking-form input,
+  .faq-booking-page .booking-form select,
+  .faq-booking-page .booking-form textarea {
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .faq-booking-page .booking-form input[type="date"],
+  .faq-booking-page .booking-form input[type="time"] {
+    min-height: 58px;
+    line-height: 1.2;
+  }
+
+  .faq-booking-page .form-actions {
+    padding: 24px 18px 96px;
+  }
+
+  .faq-booking-page .form-actions .btn {
+    width: 100%;
+  }
+}
+
