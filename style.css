@@ -1757,3 +1757,58 @@ h1 span {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* Final icon system: real SVG icon files, no typed symbol icons. */
+.icon,
+.why-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border: 1px solid rgba(214, 167, 56, .42);
+  border-radius: 14px;
+  color: var(--gold-light);
+  background: linear-gradient(145deg, rgba(214,167,56,.14), rgba(255,255,255,.035));
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+.icon img,
+.why-icon img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  color: currentColor;
+}
+.why-icon img { width: 26px; height: 26px; }
+.link-arrow-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  color: currentColor;
+}
+
+.icon,
+.why-icon {
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(244, 207, 115, .72);
+  background: radial-gradient(circle at 35% 28%, rgba(244, 207, 115, .36), rgba(214, 167, 56, .20) 45%, rgba(244, 207, 115, .08));
+  box-shadow: 0 0 0 1px rgba(244,207,115,.10), 0 14px 32px rgba(0,0,0,.36), 0 0 24px rgba(214,167,56,.16);
+}
+.icon img,
+.why-icon img {
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+  filter: drop-shadow(0 0 5px rgba(244,207,115,.42));
+}
+.why-icon img {
+  width: 31px;
+  height: 31px;
+}
+.quick-card a:hover .icon,
+.why-card:hover .why-icon {
+  border-color: rgba(244, 207, 115, .95);
+  background: radial-gradient(circle at 35% 28%, rgba(244, 207, 115, .44), rgba(214, 167, 56, .24) 48%, rgba(244, 207, 115, .10));
+}
