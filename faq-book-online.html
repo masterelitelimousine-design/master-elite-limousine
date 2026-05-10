@@ -100,7 +100,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="Master Elite Limousine home">
-        <img src="assets/images/logo.png" alt="Master Elite Limousine logo" />
+        <img src="assets/images/logo.webp" alt="Master Elite Limousine logo" />
       </a>
 
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
@@ -201,98 +201,89 @@
           <p>Complete the form below and we will follow up to confirm your luxury transportation request.</p>
         </div>
 
-        <form class="article-box reveal" action="https://api.web3forms.com/submit" method="POST">
+        <form class="article-box reveal booking-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="59c3300f-69e2-4ba2-8fa5-faeb76a8287a">
           <input type="hidden" name="subject" value="New Booking Request - Master Elite Limousine">
           <input type="hidden" name="from_name" value="Master Elite Limousine Website">
-          <input type="checkbox" name="botcheck" style="display:none;">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
-          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px;">
-            <label>
-              Name
-              <input type="text" name="name" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Phone
-              <input type="tel" name="phone" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Email
-              <input type="email" name="email" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Service Type
-              <select name="service_type" required style="width:100%; padding:14px; margin-top:6px;">
-                <option value="">Select Service</option>
-                <option>Airport Car Service</option>
-                <option>Corporate Car Service</option>
-                <option>Concierge & VIP Services</option>
-                <option>Private Chauffeur</option>
-                <option>Road Shows</option>
-                <option>Special Events</option>
-                <option>Transfers</option>
-                <option>Weddings</option>
-              </select>
-            </label>
-
-            <label>
-              Pickup Location
-              <input type="text" name="pickup_location" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Drop-off Location
-              <input type="text" name="dropoff_location" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Date
-              <input type="date" name="date" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Time
-              <input type="time" name="time" required style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Passengers
-              <input type="number" name="passengers" min="1" style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Bags / Luggage
-              <input type="text" name="bags_luggage" style="width:100%; padding:14px; margin-top:6px;">
-            </label>
-
-            <label>
-              Vehicle Preference
-              <select name="vehicle_preference" style="width:100%; padding:14px; margin-top:6px;">
-                <option value="">Select Vehicle</option>
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Sprinter</option>
-                <option>Bus</option>
-                <option>Not Sure</option>
-              </select>
-            </label>
-
-            <label>
-              Flight Number
-              <input type="text" name="flight_number" style="width:100%; padding:14px; margin-top:6px;">
-            </label>
+          <div class="form-section">
+            <h3>Contact Information</h3>
+            <div class="form-grid">
+              <label>Name
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label>Phone
+                <input type="tel" name="phone" autocomplete="tel" required>
+              </label>
+              <label class="form-full">Email
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+            </div>
           </div>
 
-          <label style="display:block; margin-top:18px;">
-            Notes
-            <textarea name="notes" rows="5" style="width:100%; padding:14px; margin-top:6px;"></textarea>
-          </label>
+          <div class="form-section">
+            <h3>Trip Details</h3>
+            <div class="form-grid">
+              <label>Service Type
+                <select name="service_type" required>
+                  <option value="">Select Service</option>
+                  <option>Airport Car Service</option>
+                  <option>Corporate Car Service</option>
+                  <option>Concierge & VIP Services</option>
+                  <option>Private Chauffeur</option>
+                  <option>Road Shows</option>
+                  <option>Special Events</option>
+                  <option>Transfers</option>
+                  <option>Weddings</option>
+                </select>
+              </label>
+              <label>Date
+                <input type="date" name="date" required>
+              </label>
+              <label>Time
+                <input type="time" name="time" required>
+              </label>
+              <label>Pickup Location
+                <input type="text" name="pickup_location" autocomplete="street-address" required>
+              </label>
+              <label class="form-full">Drop-off Location
+                <input type="text" name="dropoff_location" required>
+              </label>
+            </div>
+          </div>
 
-          <div style="margin-top:22px;">
-            <button class="btn btn-gold" type="submit">Book Online</button>
+          <div class="form-section">
+            <h3>Passengers & Vehicle</h3>
+            <div class="form-grid">
+              <label>Passengers
+                <input type="number" name="passengers" min="1" inputmode="numeric">
+              </label>
+              <label>Bags / Luggage
+                <input type="text" name="bags_luggage">
+              </label>
+              <label>Vehicle Preference
+                <select name="vehicle_preference">
+                  <option value="">Select Vehicle</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Sprinter</option>
+                  <option>Bus</option>
+                  <option>Not Sure</option>
+                </select>
+              </label>
+              <label>Flight Number
+                <input type="text" name="flight_number" placeholder="Optional for airport trips">
+              </label>
+              <label class="form-full">Notes
+                <textarea name="notes" rows="5" placeholder="Round trip details, stops, child seats, wedding schedule, luggage details or special requests."></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-gold" type="submit">Request Booking Confirmation</button>
+            <p class="form-note">Submitting this form sends a request. Your ride is confirmed after Master Elite Limousine reviews availability and trip details.</p>
           </div>
         </form>
       </div>
@@ -306,44 +297,44 @@
         </div>
 
         <div class="article-box reveal">
-          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px;">
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">How do I book Master Elite Limousine online?</h3>
+          <div class="faq-grid">
+            <article class="faq-item">
+              <h3>How do I book Master Elite Limousine online?</h3>
               <p>You can book online by completing the form with your contact information, pickup location, drop-off location, date, time, passenger count, luggage details, vehicle preference and any notes about the trip.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">What happens after I submit the booking form?</h3>
+            <article class="faq-item">
+              <h3>What happens after I submit the booking form?</h3>
               <p>After your request is submitted, we review the details and follow up to confirm availability, timing, service requirements and the best vehicle option for your transportation needs.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">Which cities do you serve?</h3>
+            <article class="faq-item">
+              <h3>Which cities do you serve?</h3>
               <p>Master Elite Limousine serves Guelph, Milton, Kitchener, Waterloo, Cambridge, Woodstock, London, Windsor, Mississauga, Fergus, Rockwood and Acton.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">Do you provide airport transportation?</h3>
+            <article class="faq-item">
+              <h3>Do you provide airport transportation?</h3>
               <p>Yes. We provide private airport car service for departures, arrivals and transfers. You can include your flight number in the booking form so your airport transportation request is easier to review.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">What vehicle types can I request?</h3>
+            <article class="faq-item">
+              <h3>What vehicle types can I request?</h3>
               <p>You can request a Sedan, SUV, Sprinter or Bus depending on your passenger count, luggage needs and occasion. If you are not sure which vehicle is best, choose “Not Sure” in the booking form.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">Do you provide wedding limo service?</h3>
+            <article class="faq-item">
+              <h3>Do you provide wedding limo service?</h3>
               <p>Yes. We provide wedding transportation for couples, wedding parties, family members and guests. Advance booking is recommended for wedding dates and larger group transportation.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">Can I book corporate or executive transportation?</h3>
+            <article class="faq-item">
+              <h3>Can I book corporate or executive transportation?</h3>
               <p>Yes. Corporate car service is available for meetings, hotels, office travel, airport pickups, client transportation, road shows and executive transfers.</p>
             </article>
 
-            <article>
-              <h3 style="margin:0 0 10px; color:#fff; text-transform:uppercase; font-size:15px; letter-spacing:.04em;">How far in advance should I book?</h3>
+            <article class="faq-item">
+              <h3>How far in advance should I book?</h3>
               <p>Advance booking is recommended, especially for airport transfers, weddings, special events, corporate travel and group transportation. Earlier requests give more time to confirm the right vehicle and schedule.</p>
             </article>
           </div>
@@ -389,7 +380,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="assets/images/logo.png" alt="Master Elite Limousine logo" />
+        <img src="assets/images/logo.webp" alt="Master Elite Limousine logo" />
         <p>Luxury limousine and chauffeur service based at 89 Dovercliffe Rd, Guelph, Ontario, Canada N1G 3A5.</p>
       </div>
 
