@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://master-elite-limousine.vercel.app/sitemap.xml
+Sitemap: https://www.masterelitelimousine.com/sitemap.xml

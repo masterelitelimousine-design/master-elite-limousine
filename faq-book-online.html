@@ -95,7 +95,7 @@
 <header class="site-header">
 <div class="container nav-wrap">
 <a aria-label="Master Elite Limousine home" class="brand" href="index.html">
-<img alt="Master Elite Limousine logo" src="assets/images/logo.webp"/>
+<img alt="Master Elite Limousine logo" decoding="async" src="assets/images/logo.webp"/>
 </a>
 <button aria-expanded="false" aria-label="Open navigation menu" class="menu-toggle" type="button">
 <span></span><span></span><span></span>
@@ -103,7 +103,7 @@
 <nav aria-label="Main navigation" class="main-nav">
 <a href="index.html">Home</a>
 <div class="nav-dropdown">
-<a class="dropdown-toggle" href="services.html">Services</a>
+<a aria-haspopup="true" class="dropdown-toggle" href="services.html">Services</a>
 <div class="dropdown-menu">
 <a href="airport-car-service.html">Airport Car Service</a>
 <a href="corporate-car-service.html">Corporate Car Service</a>
@@ -118,7 +118,7 @@
 <a href="fleet.html">Fleet</a>
 <a href="about-us.html">About Us</a>
 <div class="nav-dropdown">
-<a class="dropdown-toggle" href="service-area.html">Cities</a>
+<a aria-haspopup="true" class="dropdown-toggle" href="service-area.html">Cities</a>
 <div class="dropdown-menu">
 <a href="milton-limo-service.html">Milton</a>
 <a href="guelph-limo-service.html">Guelph</a>
@@ -162,17 +162,17 @@
 <div class="container">
 <div class="quick-card reveal">
 <a href="#booking-form">
-<span aria-hidden="true" class="icon"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/icons/phone.svg"/></span>
+<span aria-hidden="true" class="icon"><img alt="Booking support phone icon" aria-hidden="true" decoding="async" loading="lazy" src="assets/icons/phone.svg"/></span>
 <h2>Book Online</h2>
 <p>Send pickup, drop-off, date, time, passengers and vehicle preference.</p>
 </a>
 <a href="services.html">
-<span aria-hidden="true" class="icon"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/icons/crown.svg"/></span>
+<span aria-hidden="true" class="icon"><img alt="Premium limousine service icon" aria-hidden="true" decoding="async" loading="lazy" src="assets/icons/crown.svg"/></span>
 <h2>Choose Service</h2>
 <p>Select airport, corporate, VIP, private chauffeur, event or wedding service.</p>
 </a>
 <a href="fleet.html">
-<span aria-hidden="true" class="icon"><img alt="" aria-hidden="true" decoding="async" loading="lazy" src="assets/icons/car.svg"/></span>
+<span aria-hidden="true" class="icon"><img alt="Luxury vehicle icon" aria-hidden="true" decoding="async" loading="lazy" src="assets/icons/car.svg"/></span>
 <h2>Select Vehicle</h2>
 <p>Choose sedan, SUV, Sprinter or bus based on passengers and luggage.</p>
 </a>
@@ -183,32 +183,32 @@
 <div class="container">
 <div class="section-title reveal">
 <h2>Book Online</h2>
-<p>Complete the form below and we will follow up to confirm your luxury transportation request.</p>
+<p id="booking-form-instructions">Complete the form below and we will follow up to confirm your luxury transportation request.</p>
 </div>
-<form action="https://api.web3forms.com/submit" autocomplete="off" class="article-box reveal booking-form" id="booking-request-form" method="POST">
+<form action="https://api.web3forms.com/submit" aria-describedby="booking-form-instructions booking-form-note" autocomplete="on" class="article-box reveal booking-form" id="booking-request-form" method="POST">
 <input name="access_key" type="hidden" value="59c3300f-69e2-4ba2-8fa5-faeb76a8287a"/>
 <input name="subject" type="hidden" value="New Booking Request - Master Elite Limousine"/>
 <input name="from_name" type="hidden" value="Master Elite Limousine Website"/>
-<input autocomplete="off" name="botcheck" style="display:none;" tabindex="-1" type="checkbox"/>
+<input aria-hidden="true" autocomplete="off" name="botcheck" style="display:none;" tabindex="-1" type="checkbox"/>
 <div class="form-section">
 <h3>Contact Information</h3>
 <div class="form-grid">
-<label>Name
-                <input autocomplete="name" name="name" required="" type="text"/>
+<label for="booking-name">Name
+                <input autocomplete="name" id="booking-name" name="name" required="" type="text"/>
 </label>
-<label>Phone
-                <input autocomplete="tel" name="phone" required="" type="tel"/>
+<label for="booking-phone">Phone
+                <input autocomplete="tel" id="booking-phone" name="phone" required="" type="tel"/>
 </label>
-<label class="form-full">Email
-                <input autocomplete="email" name="email" required="" type="email"/>
+<label class="form-full" for="booking-email">Email
+                <input autocomplete="email" id="booking-email" name="email" required="" type="email"/>
 </label>
 </div>
 </div>
 <div class="form-section">
 <h3>Trip Details</h3>
 <div class="form-grid">
-<label>Service Type
-                <select name="service_type" required="">
+<label for="booking-service-type">Service Type
+                <select id="booking-service-type" name="service_type" required="">
 <option value="">Select Service</option>
 <option>Airport Car Service</option>
 <option>Corporate Car Service</option>
@@ -220,31 +220,31 @@
 <option>Weddings</option>
 </select>
 </label>
-<label>Date
-                <input name="date" required="" type="date"/>
+<label for="booking-date">Date
+                <input id="booking-date" name="date" required="" type="date"/>
 </label>
-<label>Time
-                <input name="time" required="" type="time"/>
+<label for="booking-time">Time
+                <input id="booking-time" name="time" required="" type="time"/>
 </label>
-<label>Pickup Location
-                <input autocomplete="street-address" name="pickup_location" required="" type="text"/>
+<label for="booking-pickup-location">Pickup Location
+                <input autocomplete="street-address" id="booking-pickup-location" name="pickup_location" required="" type="text"/>
 </label>
-<label class="form-full">Drop-off Location
-                <input name="dropoff_location" required="" type="text"/>
+<label class="form-full" for="booking-dropoff-location">Drop-off Location
+                <input autocomplete="street-address" id="booking-dropoff-location" name="dropoff_location" required="" type="text"/>
 </label>
 </div>
 </div>
 <div class="form-section">
 <h3>Passengers &amp; Vehicle</h3>
 <div class="form-grid">
-<label>Passengers
-                <input inputmode="numeric" min="1" name="passengers" type="number"/>
+<label for="booking-passengers">Passengers
+                <input id="booking-passengers" inputmode="numeric" min="1" name="passengers" type="number"/>
 </label>
-<label>Bags / Luggage
-                <input name="bags_luggage" type="text"/>
+<label for="booking-bags-luggage">Bags / Luggage
+                <input autocomplete="off" id="booking-bags-luggage" name="bags_luggage" type="text"/>
 </label>
-<label>Vehicle Preference
-                <select name="vehicle_preference">
+<label for="booking-vehicle-preference">Vehicle Preference
+                <select id="booking-vehicle-preference" name="vehicle_preference">
 <option value="">Select Vehicle</option>
 <option>Sedan</option>
 <option>SUV</option>
@@ -253,17 +253,17 @@
 <option>Not Sure</option>
 </select>
 </label>
-<label>Flight Number
-                <input name="flight_number" placeholder="Optional for airport trips" type="text"/>
+<label for="booking-flight-number">Flight Number
+                <input autocomplete="off" id="booking-flight-number" name="flight_number" placeholder="Optional for airport trips" type="text"/>
 </label>
-<label class="form-full">Notes
-                <textarea name="notes" placeholder="Round trip details, stops, child seats, wedding schedule, luggage details or special requests." rows="5"></textarea>
+<label class="form-full" for="booking-notes">Notes
+                <textarea autocomplete="off" id="booking-notes" name="notes" placeholder="Round trip details, stops, child seats, wedding schedule, luggage details or special requests." rows="5"></textarea>
 </label>
 </div>
 </div>
 <div class="form-actions">
-<button class="btn btn-gold" type="submit">Request Booking Confirmation</button>
-<p class="form-note">Submitting this form sends a request. Your ride is confirmed after Master Elite Limousine reviews availability and trip details.</p>
+<button aria-label="Request booking confirmation" class="btn btn-gold" type="submit">Request Booking Confirmation</button>
+<p class="form-note" id="booking-form-note" role="note">Submitting this form sends a request. Your ride is confirmed after Master Elite Limousine reviews availability and trip details.</p>
 </div>
 </form>
 </div>
@@ -345,7 +345,7 @@
 <footer class="site-footer">
 <div class="container footer-grid">
 <div class="footer-brand">
-<img alt="Master Elite Limousine logo" src="assets/images/logo.webp"/>
+<img alt="Master Elite Limousine logo" decoding="async" src="assets/images/logo.webp"/>
 <p>Luxury limousine and chauffeur service based at 89 Dovercliffe Rd, Guelph, Ontario, Canada N1G 3A5.</p>
 </div>
 <div>
