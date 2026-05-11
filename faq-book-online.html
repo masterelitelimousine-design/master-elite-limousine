@@ -185,7 +185,7 @@
 <h2>Book Online</h2>
 <p>Complete the form below and we will follow up to confirm your luxury transportation request.</p>
 </div>
-<form action="https://api.web3forms.com/submit" class="article-box reveal booking-form" method="POST">
+<form action="https://api.web3forms.com/submit" autocomplete="off" class="article-box reveal booking-form" id="booking-request-form" method="POST">
 <input name="access_key" type="hidden" value="59c3300f-69e2-4ba2-8fa5-faeb76a8287a"/>
 <input name="subject" type="hidden" value="New Booking Request - Master Elite Limousine"/>
 <input name="from_name" type="hidden" value="Master Elite Limousine Website"/>
@@ -401,6 +401,55 @@
 <a href="tel:16479333456">Call Now</a>
 <a href="faq-book-online.html">Book Online</a>
 </div>
+<script>
+(function () {
+  const form = document.getElementById("booking-request-form");
+  if (!form) return;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const submittedKey = "masterEliteBookingSubmitted";
+
+  function restoreSubmitButton() {
+    if (!submitButton) return;
+    submitButton.disabled = false;
+    submitButton.textContent = "Request Booking Confirmation";
+  }
+
+  function clearSubmittedForm() {
+    if (sessionStorage.getItem(submittedKey) !== "1") return;
+    form.reset();
+    sessionStorage.removeItem(submittedKey);
+    restoreSubmitButton();
+  }
+
+  form.addEventListener("submit", function (event) {
+    if (form.dataset.submitting === "true") {
+      event.preventDefault();
+      return;
+    }
+
+    form.dataset.submitting = "true";
+    sessionStorage.setItem(submittedKey, "1");
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      submitButton.setAttribute("aria-busy", "true");
+    }
+  });
+
+  window.addEventListener("pageshow", function (event) {
+    const navigation = performance.getEntriesByType("navigation")[0];
+    const cameBackToPage = event.persisted || (navigation && navigation.type === "back_forward");
+
+    if (cameBackToPage) {
+      clearSubmittedForm();
+      form.dataset.submitting = "false";
+      if (submitButton) submitButton.removeAttribute("aria-busy");
+    }
+  });
+})();
+</script>
 <script src="script.js"></script>
 </body>
 </html>
