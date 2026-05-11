@@ -1898,3 +1898,15 @@ h1 span {
   }
 }
 
+/* Fix dark Call button inside dark CTA strip */
+.cta-strip .btn-dark-outline {
+  color: #fff;
+  border: 1px solid rgba(244, 207, 115, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.cta-strip .btn-dark-outline:hover {
+  color: #111;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-color: var(--gold-light);
+}
